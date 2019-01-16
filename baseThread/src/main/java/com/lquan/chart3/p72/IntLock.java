@@ -40,25 +40,24 @@ public class IntLock implements  Runnable{
     public void run() {
         try {
             if (lock==1){
+                // 对锁的请求
                 lock1.lockInterruptibly();
                 try {
-                    Thread.sleep(500);
+                    Thread.sleep(3000);
                 } catch (InterruptedException e) {
-
-                        lock2.lockInterruptibly();
-
+                    // 对锁的请求
+                    lock2.lockInterruptibly();
                 }
             }else {
+                // 对锁的请求
                 lock2.lockInterruptibly();
-
-                    try {
-                        Thread.sleep(500);
-                    } catch (InterruptedException e) {
-                        lock1.lockInterruptibly();
-                    }
-
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException e) {
+                    //  对锁的请求
+                    lock1.lockInterruptibly();
+                }
             }
-
         } catch (InterruptedException e1) {
             e1.printStackTrace();
         }finally {
@@ -81,7 +80,7 @@ public class IntLock implements  Runnable{
         Thread t2 = new Thread(r2);
         t1.start();
         t2.start();
-        Thread.sleep(1000);
+        Thread.sleep(5000);
         // 中断其中一个线程
         t2.interrupt();
 
