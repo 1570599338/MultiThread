@@ -9,7 +9,7 @@ import static java.util.concurrent.TimeUnit.SECONDS;
  * ClassName Timelock
  *
  * @Author lquan
- * @Description //TODO
+ * @Description //锁申请等待限时
  * @Date
  * @Param
  * @return
@@ -33,6 +33,7 @@ public class Timelock implements Runnable {
     public void run() {
         try {
             System.out.println("lock:" + Thread.currentThread().getName());
+            // 如果超过5秒的还没有获得锁，就会返回false，如果成功获得锁，则返回true。
             if (lock.tryLock(5, TimeUnit.SECONDS)){
                 Thread.sleep(6000);
             }else{
