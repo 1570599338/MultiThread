@@ -11,6 +11,7 @@
     <modules>
         <module>diagrammatize</module>
         <module>baseThread</module>
+        <module>interview</module>
     </modules>
 
 
