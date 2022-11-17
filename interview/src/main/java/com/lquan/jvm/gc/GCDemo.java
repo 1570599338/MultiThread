@@ -34,7 +34,7 @@ import java.util.Random;
  *
  *
  * 7、（理论知道即可，实际中已经被优化掉了，没有了）
- *  -Xms10m  -Xmx10m  -XX:+PrintGCDetails  -XX:+PrintCommandLineFlages   -XX：UseSerialOldGC
+ *  -Xms10m  -Xmx10m  -XX:+PrintGCDetails  -XX:+PrintCommandLineFlages   -XX:+UseSerialOldGC
  *
  *
  **/
