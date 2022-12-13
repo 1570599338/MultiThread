@@ -1,4 +1,4 @@
-package main.java.com.code.one.eleven;
+package com.lquan.code.one.eleven;
 
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicLong;
